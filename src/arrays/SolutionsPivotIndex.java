@@ -43,7 +43,7 @@ Then for each index, the left sum is P[i],
 and the right sum is P[P.length - 1] - P[i] - nums[i].
  */
 
-public class Solutions {
+public class SolutionsPivotIndex {
     public int pivotIndex(int[] nums) {
         if (nums.length == 0) {
             return -1;
