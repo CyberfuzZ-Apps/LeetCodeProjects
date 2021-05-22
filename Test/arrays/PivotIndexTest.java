@@ -3,14 +3,14 @@ package arrays;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class SolutionsPivotIndexTest {
+public class PivotIndexTest {
 
     @Test
     public void whenIndex3() {
         int[] nums = {1, 7, 3, 6, 5, 6};
         int expected = 3;
-        SolutionsPivotIndex solutionsPivotIndex = new SolutionsPivotIndex();
-        int rsl = solutionsPivotIndex.pivotIndex(nums);
+        PivotIndex pivotIndex = new PivotIndex();
+        int rsl = pivotIndex.pivotIndex(nums);
         Assert.assertEquals(expected, rsl);
     }
 
@@ -18,8 +18,8 @@ public class SolutionsPivotIndexTest {
     public void whenIndexMinus1() {
         int[] nums = {1, 2, 3};
         int expected = -1;
-        SolutionsPivotIndex solutionsPivotIndex = new SolutionsPivotIndex();
-        int rsl = solutionsPivotIndex.pivotIndex(nums);
+        PivotIndex pivotIndex = new PivotIndex();
+        int rsl = pivotIndex.pivotIndex(nums);
         Assert.assertEquals(expected, rsl);
     }
 
@@ -27,8 +27,8 @@ public class SolutionsPivotIndexTest {
     public void whenIndex0() {
         int[] nums = {2, 1, -1};
         int expected = 0;
-        SolutionsPivotIndex solutionsPivotIndex = new SolutionsPivotIndex();
-        int rsl = solutionsPivotIndex.pivotIndex(nums);
+        PivotIndex pivotIndex = new PivotIndex();
+        int rsl = pivotIndex.pivotIndex(nums);
         Assert.assertEquals(expected, rsl);
     }
 }
