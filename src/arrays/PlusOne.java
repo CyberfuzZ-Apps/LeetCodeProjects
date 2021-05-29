@@ -3,7 +3,7 @@ package arrays;
 import java.util.Arrays;
 
 /*
-Plus One.
+66. Plus One
 
 Solution:
 Given a non-empty array of decimal digits representing a non-negative integer,

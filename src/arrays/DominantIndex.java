@@ -1,6 +1,6 @@
 package arrays;
 /*
-Largest Number At Least Twice of Others.
+747. Largest Number At Least Twice of Others
 
 You are given an integer array nums where the largest integer is unique.
 Determine whether the largest element in the array is at least twice as much

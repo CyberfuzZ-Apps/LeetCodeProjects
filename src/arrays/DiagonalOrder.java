@@ -1,6 +1,6 @@
 package arrays;
 /*
-Diagonal Traverse
+498. Diagonal Traverse
 
 Solution
 Given an m x n matrix mat, return an array of all the elements of the array in a diagonal order.
