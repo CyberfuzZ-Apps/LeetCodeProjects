@@ -1,4 +1,8 @@
 package arrays;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /*
 1. Two Sum
 Easy
@@ -38,11 +42,14 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
  */
 public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
-                if (nums[i] + nums[j] == target) {
-                    return new int[] {i, j};
-                }
+            map.put(nums[i], i);
+        }
+        for (int i = 0; i < nums.length; i++) {
+            int tmp = target - nums[i];
+            if (map.containsKey(tmp) && map.get(tmp) != i) {
+                return new int[] {i, map.get(tmp)};
             }
         }
         throw new IllegalArgumentException("No solutions!!!");
