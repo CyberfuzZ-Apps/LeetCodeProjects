@@ -38,20 +38,13 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
  */
 public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
-        int[] rsl = new int[2];
-        if (nums.length == 2 && nums[0] + nums[1] != target) {
-            return new int[0];
-        }
-        metka:
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
                 if (nums[i] + nums[j] == target) {
-                    rsl[0] = i;
-                    rsl[1] = j;
-                    break metka;
+                    return new int[] {i, j};
                 }
             }
         }
-        return rsl;
+        throw new IllegalArgumentException("No solutions!!!");
     }
 }
