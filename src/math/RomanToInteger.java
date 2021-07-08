@@ -84,6 +84,7 @@ public class RomanToInteger {
                     number -= 1;
                     i++;
                 }
+                continue;
             }
             if (chars[chars.length - 1 - i] == 'X') {
                 number += 10;
@@ -91,6 +92,7 @@ public class RomanToInteger {
                     number -= 1;
                     i++;
                 }
+                continue;
             }
             if (chars[chars.length - 1 - i] == 'L') {
                 number += 50;
@@ -98,6 +100,7 @@ public class RomanToInteger {
                     number -= 10;
                     i++;
                 }
+                continue;
             }
             if (chars[chars.length - 1 - i] == 'C') {
                 number += 100;
@@ -105,6 +108,7 @@ public class RomanToInteger {
                     number -= 10;
                     i++;
                 }
+                continue;
             }
             if (chars[chars.length - 1 - i] == 'D') {
                 number += 500;
@@ -112,6 +116,7 @@ public class RomanToInteger {
                     number -= 100;
                     i++;
                 }
+                continue;
             }
             if (chars[chars.length - 1 - i] == 'M') {
                 number += 1000;
