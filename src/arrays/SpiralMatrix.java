@@ -1,7 +1,6 @@
 package arrays;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -28,24 +27,39 @@ n == matrix[i].length
  */
 public class SpiralMatrix {
     public List<Integer> spiralOrder(int[][] matrix) {
+
         List<Integer> rsl = new ArrayList<>();
-        int m = matrix.length;
-        int n = matrix[0].length;
-        if (m * n == 1) {
+
+        if (matrix.length * matrix[0].length == 1) {
             rsl.add(matrix[0][0]);
             return rsl;
-        } else if (m * n == 0) {
+        } else if (matrix.length * matrix[0].length == 0) {
             return rsl;
         }
         int row = 0;
         int cell = 0;
-        while (row < m && cell < n) {
-            if (cell <= n - 1) {
-                rsl.add(matrix[row][cell++]);
-            } else {
-                cell -= 1;
-                row += 1;
-                rsl.add(matrix[row++][cell]);
+        int lastRow = matrix.length - 1;
+        int lastCell = matrix[0].length - 1;
+        while (row <= lastRow && cell <= lastCell) {
+            for (int i = cell; i <= lastCell; i++) {
+                rsl.add(matrix[row][i]);
+            }
+            row++;
+            for (int i = row; i <= lastRow; i++) {
+                rsl.add(matrix[i][lastCell]);
+            }
+            lastCell--;
+            if (row <= lastRow) {
+                for (int i = lastCell; i >= cell; i--) {
+                    rsl.add(matrix[lastRow][i]);
+                }
+                lastRow--;
+            }
+            if (cell <= lastCell) {
+                for (int i = lastRow; i >= row; i--) {
+                    rsl.add(matrix[i][cell]);
+                }
+                cell++;
             }
         }
         return rsl;
