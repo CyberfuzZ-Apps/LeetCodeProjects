@@ -43,6 +43,24 @@ nums contains distinct values sorted in ascending order.
  */
 public class SearchInsertPosition {
     public int searchInsert(int[] nums, int target) {
-        return 0;
+        if (target == 0) {
+            return 0;
+        }
+        int start = 0;
+        int end = nums.length - 1;
+        if (start == end) {
+            return target > nums[0] ? 1 : 0;
+        }
+        while (start < end) {
+            int mid = (start + end) / 2;
+            if (target == nums[mid]) {
+                return mid;
+            } else if (target < nums[mid]) {
+                end = mid - 1;
+            } else {
+                start = mid + 1;
+            }
+        }
+        return target > nums[start] ? start + 1 : start;
     }
 }
