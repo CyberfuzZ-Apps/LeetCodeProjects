@@ -1,4 +1,10 @@
 package arrays;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
 /*
 498. Diagonal Traverse
 
@@ -55,4 +61,27 @@ public class DiagonalOrder {
         }
         return rsl;
     }
+}
+
+/**
+ * Тут я тренируюсь создавать собственные аннотации
+ */
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@interface SmartPhone {       //собственная аннотация
+    String OS() default "Android";
+    int yearOfCompanyCreation() default 2010;
+}
+
+@SmartPhone
+class Xiaomi {
+    private String model;
+    private double price;
+}
+
+@SmartPhone(OS = "IOS", yearOfCompanyCreation = 1976)
+class IPhone {
+    private String model;
+    private double price;
+
 }
